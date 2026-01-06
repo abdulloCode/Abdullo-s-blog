@@ -99,25 +99,26 @@ const chatId = import.meta.env.VITE_CHAT_ID;
 
   return (
     <section className="max-w-5xl mx-auto px-4 py-24 font-sans antialiased pt-20">
-     <section className="max-w-2xl mx-auto px-6 py-20 font-sans antialiased">
-  <div className="bg-white rounded-[2.5rem] p-10 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
+     <section className="w-full max-w-2xl mx-auto px-4 sm:px-6 py-12 md:py-20 font-sans antialiased">
+  <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-10 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-100">
     
     {/* Sarlavha qismi */}
-    <div className="mb-12">
-      <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-3">
+    <div className="mb-8 md:mb-12">
+      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 mb-3">
         Abdullo bilan bog'lanish
       </h2>
-      <p className="text-gray-500 text-sm leading-relaxed">
+      <p className="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-md">
         Loyihangiz bo'yicha takliflar yoki savollaringiz bo'lsa, quyidagi shaklni to'ldiring. 
-        Xabaringiz <span className="text-black font-semibold">Telegramga</span> yuboriladi.
+        Xabaringiz <span className="text-black font-semibold">Telegramga</span> boradi.
       </p>
     </div>
 
-    <form onSubmit={handleSubmit} className="space-y-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Ism */}
-        <div className="flex flex-col gap-2">
-          <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">
+    <form onSubmit={handleSubmit} className="space-y-6 md:y-8">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+       
+        <div className="flex flex-col gap-1.5 md:gap-2">
+          <label className="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">
             Ismingiz
           </label>
           <input
@@ -125,52 +126,52 @@ const chatId = import.meta.env.VITE_CHAT_ID;
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="Abdullo"
-            className="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 outline-none transition-all text-sm font-medium text-gray-900"
+            className="w-full px-4 md:px-5 py-3.5 md:py-4 bg-gray-50 border border-transparent rounded-xl md:rounded-2xl focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 outline-none transition-all text-sm font-medium text-gray-900"
             required
           />
         </div>
 
-        {/* Email */}
-        <div className="flex flex-col gap-2">
-          <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">
+    
+        <div className="flex flex-col gap-1.5 md:gap-2">
+          <label className="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">
             Email
           </label>
           <input
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            placeholder="example@mail.com"
-            className="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 outline-none transition-all text-sm font-medium text-gray-900"
+            placeholder="abduqodirov.com"
+            className="w-full px-4 md:px-5 py-3.5 md:py-4 bg-gray-50 border border-transparent rounded-xl md:rounded-2xl focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 outline-none transition-all text-sm font-medium text-gray-900"
             required
           />
         </div>
       </div>
 
       {/* Xabar */}
-      <div className="flex flex-col gap-2">
-        <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">
+      <div className="flex flex-col gap-1.5 md:gap-2">
+        <label className="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">
           Xabaringiz
         </label>
         <textarea
-          rows="5"
+          rows="4"
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           placeholder="Loyiha haqida qisqacha..."
-          className="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 outline-none transition-all text-sm font-medium text-gray-900 resize-none"
+          className="w-full px-4 md:px-5 py-3.5 md:py-4 bg-gray-50 border border-transparent rounded-xl md:rounded-2xl focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 outline-none transition-all text-sm font-medium text-gray-900 resize-none"
           required
         ></textarea>
       </div>
 
-      <div className="pt-4">
+      <div className="pt-2 md:pt-4">
         <button
           type="submit"
-          className="w-full md:w-auto px-12 py-4 bg-black text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-gray-800 hover:shadow-lg hover:-translate-y-1 transition-all active:scale-95"
+          className="w-full md:w-auto px-10 py-4 bg-black text-white text-[10px] md:text-xs font-black uppercase tracking-[0.2em] rounded-xl md:rounded-2xl hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 transition-all active:scale-95 shadow-md"
         >
           Xabarni yuborish
         </button>
 
         {status && (
-          <p className={`mt-6 text-center md:text-left text-[11px] font-bold uppercase tracking-wider ${
+          <p className={`mt-4 text-center md:text-left text-[10px] font-bold uppercase tracking-wider ${
             status.includes("✅") ? "text-green-600" : "text-red-500"
           }`}>
             {status}
@@ -181,7 +182,7 @@ const chatId = import.meta.env.VITE_CHAT_ID;
   </div>
 </section>
       <div className="text-center mb-16">
-        <h2 className="text-2xl font-black text-gray-900 tracking-tighter mb-4 uppercase italic">
+        <h2 className="text-5xl font-black text-gray-900 tracking-tighter mb-4 uppercase italic">
           Bog'lanish
         </h2>
         <p className="text-gray-500 font-medium max-w-lg mx-auto leading-relaxed">
