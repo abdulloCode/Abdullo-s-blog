@@ -79,7 +79,7 @@ const About = () => {
         </h1>
 
         <p className="text-sm text-gray-500 mb-10">
-          Abdullo · Shaxsiy blog
+          Abdullo Blog
           <br />
           03.01.2026
         </p>
@@ -89,8 +89,7 @@ const About = () => {
   <img
     src={Abdullo}
     alt="Abduqodirov Abdullajon"
-    /* object-[eniga_bo'yiga] - 50% 50% bu markaz. 
-       Agar tepasi ko'rinib qolsa, ikkinchi sonni oshiring (masalan 60% yoki 70%) */
+   
     className="w-full h-full object-cover object-[50%_50%] transition-transform duration-1000 group-hover:scale-105"
   />
 </div>

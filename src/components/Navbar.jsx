@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="py-6 border-b border-gray-100 mb-10  fixed left-0 right-0 bg-white z-50">
       <div className="container mx-auto px-4 flex justify-around items-center">
         <h1 className="text-2xl font-bold tracking-tight text-gray-900 font-sans">
-          Abdullo's Blog
+          Abdullo  Blog
         </h1>
 
       
