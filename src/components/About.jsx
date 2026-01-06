@@ -1,5 +1,5 @@
 import React from "react";
-import Abdullo from "../assets/Abdullo.jpg";
+import Abdullo from "../assets/main-image.jpg";
 import jamoa from "../assets/jamoa.png";
 import ielts from "../assets/ielts.png";
 import image from "../assets/image.png";
@@ -85,14 +85,15 @@ const About = () => {
         </p>
 
         <div className="w-full max-w-3xl mx-auto overflow-hidden rounded-3xl border border-gray-100 shadow-sm my-10 group">
-          <div className="aspect-[16/10] w-full overflow-hidden bg-gray-50">
-            <img
-              src={Abdullo}
-              alt="Abduqodirov Abdullajon"
-              className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105"
-            />
-            {/* object-top — rasmni tepasini ko'rsatadi va ortiqcha qismini pastdan kesib tashlaydi */}
-          </div>
+         <div className="aspect-[16/10] w-full overflow-hidden bg-gray-50">
+  <img
+    src={Abdullo}
+    alt="Abduqodirov Abdullajon"
+    /* object-[eniga_bo'yiga] - 50% 50% bu markaz. 
+       Agar tepasi ko'rinib qolsa, ikkinchi sonni oshiring (masalan 60% yoki 70%) */
+    className="w-full h-full object-cover object-[50%_50%] transition-transform duration-1000 group-hover:scale-105"
+  />
+</div>
 
           <div className="py-3 bg-gray-50/50 border-t border-gray-100 text-center">
             <p className="text-[10px] text-gray-400 uppercase tracking-[0.3em] font-medium">

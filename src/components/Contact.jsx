@@ -99,89 +99,89 @@ const chatId = import.meta.env.VITE_CHAT_ID;
 
   return (
     <section className="max-w-5xl mx-auto px-4 py-24 font-sans antialiased pt-20">
-      <section className="max-w-3xl mx-auto px-4 py-20 font-sans">
-        <div className="bg-white rounded-[3rem] p-8 md:p-12 shadow-2xl border border-gray-50">
-          <div className="mb-10 text-center">
-            <h2 className="text-xl font-black tracking-tighter uppercase italic mb-2 text-gray-900">
-              Abdullo bilan bog'lanish
-            </h2>
-            <p className="text-gray-400 text-sm">
-              Xabaringiz to'g'ridan-to'g'ri mening Telegramimga boradi.
-            </p>
-          </div>
+     <section className="max-w-2xl mx-auto px-6 py-20 font-sans antialiased">
+  <div className="bg-white rounded-[2.5rem] p-10 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
+    
+    {/* Sarlavha qismi */}
+    <div className="mb-12">
+      <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-3">
+        Abdullo bilan bog'lanish
+      </h2>
+      <p className="text-gray-500 text-sm leading-relaxed">
+        Loyihangiz bo'yicha takliflar yoki savollaringiz bo'lsa, quyidagi shaklni to'ldiring. 
+        Xabaringiz <span className="text-black font-semibold">Telegramga</span> yuboriladi.
+      </p>
+    </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-4">
-                  Ismingiz
-                </label>
-                <input
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  placeholder="Abdull0"
-                  className="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-black outline-none text-sm font-medium"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-4">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  placeholder="example@mail.com"
-                  className="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-black outline-none text-sm font-medium"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-4">
-                Xabar
-              </label>
-              <textarea
-                rows="5"
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
-                placeholder="Loyihangiz haqida yozing..."
-                className="w-full px-6 py-4 bg-gray-50 border-none rounded-3xl focus:ring-2 focus:ring-black outline-none text-sm font-medium resize-none"
-                required
-              ></textarea>
-            </div>
-
-            <div className="flex flex-col items-center gap-4">
-              <button
-                type="submit"
-                className="px-12 py-4 bg-black text-white font-black rounded-2xl hover:scale-105 transition-all active:scale-95"
-              >
-                YUBORISH
-              </button>
-              {status && (
-                <p
-                  className={`text-xs font-bold ${
-                    status.includes("✅") ? "text-green-500" : "text-red-500"
-                  }`}
-                >
-                  {status}
-                </p>
-              )}
-            </div>
-          </form>
+    <form onSubmit={handleSubmit} className="space-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Ism */}
+        <div className="flex flex-col gap-2">
+          <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">
+            Ismingiz
+          </label>
+          <input
+            type="text"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            placeholder="Abdullo"
+            className="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 outline-none transition-all text-sm font-medium text-gray-900"
+            required
+          />
         </div>
-      </section>
+
+        {/* Email */}
+        <div className="flex flex-col gap-2">
+          <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">
+            Email
+          </label>
+          <input
+            type="email"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder="example@mail.com"
+            className="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 outline-none transition-all text-sm font-medium text-gray-900"
+            required
+          />
+        </div>
+      </div>
+
+      {/* Xabar */}
+      <div className="flex flex-col gap-2">
+        <label className="text-[11px] font-black uppercase tracking-widest text-gray-400 ml-1">
+          Xabaringiz
+        </label>
+        <textarea
+          rows="5"
+          value={formData.message}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          placeholder="Loyiha haqida qisqacha..."
+          className="w-full px-5 py-4 bg-gray-50 border border-transparent rounded-2xl focus:bg-white focus:border-gray-200 focus:ring-4 focus:ring-gray-100 outline-none transition-all text-sm font-medium text-gray-900 resize-none"
+          required
+        ></textarea>
+      </div>
+
+      <div className="pt-4">
+        <button
+          type="submit"
+          className="w-full md:w-auto px-12 py-4 bg-black text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-gray-800 hover:shadow-lg hover:-translate-y-1 transition-all active:scale-95"
+        >
+          Xabarni yuborish
+        </button>
+
+        {status && (
+          <p className={`mt-6 text-center md:text-left text-[11px] font-bold uppercase tracking-wider ${
+            status.includes("✅") ? "text-green-600" : "text-red-500"
+          }`}>
+            {status}
+          </p>
+        )}
+      </div>
+    </form>
+  </div>
+</section>
       <div className="text-center mb-16">
-        <h2 className="text-5xl font-black text-gray-900 tracking-tighter mb-4 uppercase italic">
+        <h2 className="text-2xl font-black text-gray-900 tracking-tighter mb-4 uppercase italic">
           Bog'lanish
         </h2>
         <p className="text-gray-500 font-medium max-w-lg mx-auto leading-relaxed">
