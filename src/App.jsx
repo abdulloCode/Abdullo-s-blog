@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
-import Blog from "./components/Blog";
+import Blog from "./components/Projects";
 import { Route, Routes } from "react-router-dom";
 import Contact from "./components/Contact";
 
